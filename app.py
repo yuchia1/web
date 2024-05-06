@@ -17,7 +17,8 @@ def handle_form():
     # Validate ID number (assuming it's numeric)
     if len(id_number)!=10:
         return "身分證號碼應為10碼", 400
-
+    if str[0].isnotalpha():
+        return "身分證號碼第一位應為字母", 400
     # Validate name (assuming it's alphabetic)
     if not re.match(r'^[A-Za-z\s]+$', name):
         return "Invalid name", 400
