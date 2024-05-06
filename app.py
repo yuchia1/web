@@ -1,5 +1,4 @@
 from flask import Flask, request, render_template
-import re
 
 app = Flask(__name__)
 
@@ -45,10 +44,5 @@ def handle_form():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
-
-
-    return "All entries are valid", 200
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)  # Listen on all available network interfaces and port 80
+  # Listen on all available network interfaces and port 80
 
