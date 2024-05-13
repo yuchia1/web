@@ -18,8 +18,12 @@ def handle_form():
     letter_to_number = {chr(i): i - ord('A') + 10 for i in range(ord('A'), ord('Z') + 1)}
 
     # Convert the first letter to the corresponding number
-    first_digit = letter_to_number[id_number[0]] // 10
-    second_digit = letter_to_number[id_number[0]] % 10
+    first_letter = id_number[0]
+    first_digit = letter_to_number[first_letter] // 10
+    second_digit = letter_to_number[first_letter] % 10
+
+    # Print the first digit after conversion
+    print("First digit after conversion:", first_digit)
 
     # Multiply the converted two-digit number by 1 and 9
     total_sum = first_digit * 1 + second_digit * 9
@@ -40,6 +44,7 @@ def handle_form():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
+
 
 
 
