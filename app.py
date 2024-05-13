@@ -19,7 +19,7 @@ def handle_form():
         return "身分證號碼應為10碼，且第一位應為大寫字母", 400
 
     # Define a dictionary to map letters to numbers
-    letter_to_number = {chr(i): i - ord('A') + 10 for i in range(ord('A'), ord('Z') + 1)}
+    first_letter_value = ord(id_number[0].upper()) - ord('A') + 10
 
     # Convert the first letter to the corresponding number
     first_letter = id_number[0]
