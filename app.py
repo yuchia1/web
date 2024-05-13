@@ -41,15 +41,6 @@ def handle_form():
     print("身份证号码校验通过")
 else:
     print("身份证号码校验未通过")
-
-
-    # Check if the result is divisible by 10
-    if total_sum % 10 == 0:
-        return "身分證號碼正確", 200
-    else:
-        return "身分證號碼不正確", 400
-
-
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
 
