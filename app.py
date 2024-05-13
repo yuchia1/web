@@ -22,8 +22,8 @@ def handle_form():
     first_letter = id_number[0]
     if first_letter.isalpha() and first_letter.isupper():
         corresponding_number = ord(first_letter) - 55  # A 对应的 ASCII 码是 65，所以减去 55
-        first_digit = corresponding_number // 10
-        second_digit = corresponding_number % 10
+        first_digit = (ord(first_letter) - 55) // 10
+        second_digit = (ord(first_letter) - 55) % 10
         total_sum = first_digit * 1 + second_digit * 9
         weights = [8, 7, 6, 5, 4, 3, 2, 1]
         for i in range(1, 9):
