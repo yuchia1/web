@@ -37,10 +37,6 @@ def handle_form():
             return "身分證號碼不正確", 400
     else:
         return "第一個字母不是大寫英文字母", 400
-        if total_sum % 10 == 0:
-    print("身份证号码校验通过")
-else:
-    print("身份证号码校验未通过")
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
 
