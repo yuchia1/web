@@ -18,13 +18,10 @@ def handle_form():
     if len(id_number) != 10 or not id_number[0].isalpha():
         return "身分證號碼應為10碼，且第一位應為大寫字母", 400
 
-    # Define a dictionary to map letters to numbers
-    first_letter_value = ord(id_number[0].upper()) - ord('A') + 10
-
     # Convert the first letter to the corresponding number
-    first_letter = id_number[0]
-    first_digit = letter_to_number[first_letter] // 10
-    second_digit = letter_to_number[first_letter] % 10
+    first_letter_value = ord(id_number[0].upper()) - ord('A') + 10
+    first_digit = first_letter_value // 10
+    second_digit = first_letter_value % 10
 
     # Print the first digit after conversion
     print("First digit after conversion:", first_digit)
@@ -59,7 +56,8 @@ def handle_form():
     return "All entries are valid", 200
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)  # Listen on all available network interfaces and port 80
+    app.run(host='0.0.0, port=80)  # Listen on all available network interfaces and port 80
+
 
 
 
