@@ -15,7 +15,7 @@ def handle_form():
     email = request.form.get('email')
 
     # Validate ID number (assuming it's numeric)
-  if len(id_number) != 10 or not id_number[0].isalpha():
+    if len(id_number) != 10 or not id_number[0].isalpha():
         return "身分證號碼應為10碼，且第一位應為大寫字母", 400
 
     # Define a dictionary to map letters to numbers
@@ -41,9 +41,7 @@ def handle_form():
     total_sum += int(id_number[-1])
 
     # Check if the result is divisible by 10
-    if total_sum % 10 == 0:
-        return "身分證號碼正確", 200
-    else:
+    if total_sum % 10 != 0:
         return "身分證號碼不正確", 400
 
     # Validate name (assuming it's alphabetic)
@@ -62,6 +60,7 @@ def handle_form():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)  # Listen on all available network interfaces and port 80
+
 
 
 
