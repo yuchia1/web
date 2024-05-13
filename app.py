@@ -56,7 +56,8 @@ def handle_form():
     return "All entries are valid", 200
 
 if __name__ == '__main__':
-    app.run(host='0.0.0, port=80)  # Listen on all available network interfaces and port 80
+    app.run(host='0.0.0.0', port=80)  # Listen on all available network interfaces and port 80
+
 
 
 
