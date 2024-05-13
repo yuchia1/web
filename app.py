@@ -31,7 +31,7 @@ def handle_form():
 
     # Multiply the remaining digits by 8, 7, 6, 5, 4, 3, 2, 1
     weights = [8, 7, 6, 5, 4, 3, 2, 1]
-    for i in range(1, 9):
+    for i in range(2, 9):
         total_sum += int(id_number[i]) * weights[i - 1]
 
     # Add the last digit
