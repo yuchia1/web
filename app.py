@@ -12,7 +12,7 @@ def handle_form():
 
     # Validate ID number
     if len(id_number) != 10 or not id_number[0].isalpha():
-        return False
+        return "身分證號碼應為10碼，且第一位應為大寫字母", 400
 
     # Convert the first letter to the corresponding number (A=10, B=11, ..., Z=35)
     first_digit = (ord(id_number[0]) - ord('A') + 10) // 10
@@ -30,10 +30,12 @@ def handle_form():
     total_sum += int(id_number[-1])
 
     # Check if the result is divisible by 10
-    return total_sum % 10 == 0
+    if total_sum % 10 == 0:
+        return "身分證號碼正確", 200
+    else:
+        return "身分證號碼不正確", 400
 
-# Test the function
-id_number = "A123456789"  # Example ID number
-result = validate_id_number(id_number)
-print("Result:", result)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=80)
+
 
